@@ -1,0 +1,187 @@
+ScreenManager:
+    MainWindow:
+        name: "screen1"
+    SecondWindow:
+        name: "screen2"
+    ThreeWindow:
+        name: "screen3"
+    FourWindow:
+        name: "screen4"
+    FiveWindow:
+        name: "screen5"
+
+################################ home page #######################################
+<MainWindow>:
+    MDLabel:
+        id: bo_x
+        text: "Project SCADA System"
+        halign: 'center'
+        valign:'middle'
+        pos_hint: {"center_y": 0.9}
+        # theme_text_color: "Custom"
+        font_style: "H6"
+        text_color: 0, 0, 1, 1
+    Image:
+        source: "/python_scada/design/tool_design/logo.png"
+        #pos: self.x - 10, self.y - 10
+        pos_hint: {"center_x": 0.5, "center_y": 0.7}
+    MDRoundFlatButton:
+        id: View_bot
+        text:"view"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        on_press:
+            app.root.current = "screen2"
+            root.manager.transition.direction = "left"
+    MDFloatingActionButtonSpeedDial:
+        callback: app.callback
+        data: app.data
+        root_button_anim: True
+
+################################ overview page #######################################
+<SecondWindow>:
+    MDLabel:
+        text: "overview"
+        pos_hint: {"center_x": 0.52, "center_y": 0.05}
+    MDFillRoundFlatButton
+        text: "overview"
+        pos_hint: {"center_x": 0.35, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen2"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "data"
+        pos_hint: {"center_x": 0.45, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen3"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "configure"
+        pos_hint: {"center_x": 0.55, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen4"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "setting"
+        pos_hint: {"center_x": 0.65, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen4"
+            root.manager.transition.direction = "left"
+    MDFloatingActionButtonSpeedDial:
+        callback: app.callback
+        data: app.data
+        root_button_anim: True
+
+################################ data page #######################################
+<ThreeWindow>:
+    MDLabel:
+        text: "data"
+        pos_hint: {"center_x": 0.52, "center_y": 0.05}
+    MDFillRoundFlatButton
+        text: "overview"
+        pos_hint: {"center_x": 0.35, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen2"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "data"
+        pos_hint: {"center_x": 0.45, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen3"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "configure"
+        pos_hint: {"center_x": 0.55, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen4"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "setting"
+        pos_hint: {"center_x": 0.65, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen5"
+            root.manager.transition.direction = "left"
+    MDFloatingActionButtonSpeedDial:
+        callback: app.callback
+        data: app.data
+        root_button_anim: True
+
+################################ configure page #######################################
+<FourWindow>:
+    MDLabel:
+        text: "configure"
+        pos_hint: {"center_x": 0.52, "center_y": 0.05}
+    MDFillRoundFlatButton
+        text: "overview"
+        pos_hint: {"center_x": 0.35, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen2"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "data"
+        pos_hint: {"center_x": 0.45, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen3"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "configure"
+        pos_hint: {"center_x": 0.55, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen4"
+            root.manager.transition.direction = "left"
+    MDFillRoundFlatButton
+        text: "setting"
+        pos_hint: {"center_x": 0.65, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen5"
+            root.manager.transition.direction = "left"
+    MDFloatingActionButtonSpeedDial:
+        callback: app.callback
+        data: app.data
+        root_button_anim: True
+
+################################ setting page #######################################
+<FiveWindow>:
+    MDLabel:
+        text: "setting"
+        pos_hint: {"center_x": 0.52, "center_y": 0.05}
+    MDFillRoundFlatButton
+        text: "overview"
+        pos_hint: {"center_x": 0.35, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen2"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "data"
+        pos_hint: {"center_x": 0.45, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen3"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "configure"
+        pos_hint: {"center_x": 0.55, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen4"
+            root.manager.transition.direction = "right"
+    MDFillRoundFlatButton
+        text: "setting"
+        pos_hint: {"center_x": 0.65, "center_y": 0.9}
+        on_press:
+            app.root.current = "screen5"
+            root.manager.transition.direction = "right"
+    MDFloatingActionButtonSpeedDial:
+        callback: app.callback
+        data: app.data
+        root_button_anim: True
+
+################################ order else #######################################
+<Content>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+
+    MDTextField:
+        hint_text: "user"
+
+    MDTextField:
+        hint_text: "password"
